@@ -7,7 +7,7 @@ import (
 )
 
 // itemsHandler is a HTTP handler for the items.
-func itemsHandler(w http.ResponseWriter, r http.Request) {
+func itemsHandler(w http.ResponseWriter, r *http.Request) {
 	method := r.Method
 	log.Infof("Received a %s request for items", method)
 	switch method {
