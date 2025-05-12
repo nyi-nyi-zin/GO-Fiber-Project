@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/charmbracelet/log"
@@ -58,6 +59,10 @@ func main() {
 	app.Get("/items", getAllItems)
 	app.Get("/items/:id", getItem)
 	app.Post("/items", createItem)
+
+	var name string = "John"
+namePtr := &name  // name variable ရဲ့ memory address ကို ရယူ
+fmt.Println(*namePtr)
 
 	log.Info("Starting server on port 3000")
 	err := app.Listen(":3000")
